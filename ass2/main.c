@@ -75,7 +75,19 @@ void drawSquare () {
         for (int j = 0; j < square_size; j++) {
             if (square_size != NO_DIAGONAL_SIZE) {
 
-                if (j == square_size/2 && i == square_size/2) {
+                if (i ==1) {
+                    if (j == square_size-i + 1) {
+                        printf("/");
+                    }
+                }
+
+                if (i ==square_size-2) {
+                    if (j == square_size-i +1) {
+                        printf("\\");
+                    }
+                }
+
+                if (j == square_size/2 + 1 && i == square_size/2) {
                     printf("X");
                 } else if (j == i+1) {
                     printf("\\");
