@@ -13,6 +13,9 @@ void menu();
 void drawSquare();
 void isEvenTextLength();
 void CheckTextType();
+void HexToDec();
+void BaseToDec();
+void BitCount();
 
 
 void menu() {
@@ -33,27 +36,30 @@ void menu() {
         scanf("%d",&menu_option);
 
         switch (menu_option) {
-
             case EXIT_OPTION:
                 break;
-
             case 1:
                 drawSquare();
                 break;
-
             case 2:
                 isEvenTextLength();
                 break;
-
             case 3:
                 CheckTextType();
                 break;
-
+            case 4:
+                HexToDec();
+                break;
+            case 5:
+                BaseToDec();
+                break;
+            case 6:
+                BitCount();
+                break;
             default:
                 printf("Wrong option! \n");
         }
     } while( menu_option != EXIT_OPTION );
-
 
     return;
 }
@@ -72,7 +78,7 @@ void drawSquare () {
     int number;
 
     // get square size by 2 * input + 1
-    printf("Please Enter Size:\n");
+    printf("Enter a number:\n");
     scanf("%d", &number);
     int square_size = 2* number +1;
 
@@ -125,7 +131,6 @@ void drawSquare () {
 
 }
 
-
 /**
  * Function Name: isEven
  * Input: Stdin
@@ -138,13 +143,14 @@ void isEvenTextLength () {
     char buffer;
     int flag = 0;
 
-    //get inital first char from user and store in a temp buffer
+    // get initial first char from user and store in a temp buffer
 
-    printf("Please Enter Text:\n");
+    printf("Enter text:\n");
     scanf(" %c",&buffer);
 
-    // keep reading chars from stdin until user pressed 'Enter'. Flag is XOR'd to keep track of even/uneven
-    // status instead of a counter or string length(which we are not allowed to use in this exercise)
+    /* keep reading chars from stdin until user pressed 'Enter'. Flag is XOR'd to keep track of even/uneven
+     * status instead of a counter or string length(which we are not allowed to use in this exercise)
+    */
 
     while( buffer != '\n' ) {
         scanf("%c",&buffer);
@@ -178,9 +184,9 @@ void CheckTextType () {
 
 
 
-    //get inital first char from user and store in a temp buffer
+    // get initial first char from user and store in a temp buffer
 
-    printf("Please Enter Text:\n");
+    printf("Enter text:\n");
     scanf(" %c",&buffer);
 
     // keep reading chars from stdin until user pressed 'Enter'.
@@ -195,8 +201,9 @@ void CheckTextType () {
 
         scanf("%c",&buffer);
 
-        //As long as the text is not invalid and not ended with a backspace, check if the current char is bigger than,
-        // smaller than or equal to the previous, and therefore determine the text type
+        /* As long as the text is not invalid and not ended with a backspace, check if the current char is bigger than,
+         * smaller than or equal to the previous, and therefore determine the text type
+        */
 
         if (!isInvalidText && buffer != '\n') {
 
@@ -214,6 +221,8 @@ void CheckTextType () {
             if (buffer == tempBuffer) {
                 isConstantText = 1;
             }
+
+            // if we have both decreasing and increasing letters, it means the text is mixed
 
             if (isIncreasingText && isDecreasingText) {
                 isMixedText = 1;
@@ -242,8 +251,79 @@ void CheckTextType () {
 
 }
 
-void main() {
+/**
+ * Function Name: HexToDec
+ * Input: Stdin
+ * Output: Stdout
+ * Function Operation: Converts Hex number from stdin to Decimal.
+ *
+ */
+void HexToDec () {
+
+
+    char buffer;
+    int isInvalid = 0;
+
+
+
+    // get initial first char from user and store in a temp buffer
+
+    printf("Enter number:\n");
+    scanf(" %c",&buffer);
+
+    // keep reading chars from stdin until user pressed 'Enter'.
+
+    while (buffer != '\n' ) {
+
+        if ( (buffer >='0' && buffer <= '9') || (buffer >= 'A' && buffer <= 'F') || (buffer >= 'a' && buffer <= 'f')) {
+            if (!isInvalid) {
+
+                if (buffer >='0' && buffer <= '9') {
+                    printf("%d",(buffer - '0'));
+                }
+                if  (buffer >= 'A' && buffer <= 'F') {
+                    printf("%d",(buffer - 'A' + 10));
+                }
+                if  (buffer >= 'a' && buffer <= 'f') {
+                    printf("%d",(buffer - 'a' + 10));
+                }
+
+            }
+        } else {
+            printf("Error! %c is not a valid digit in base 16\n",&buffer);
+            isInvalid = 1;
+        }
+
+        scanf("%c",&buffer);
+    }
+    printf("\n");
+
+}
+
+/**
+ * Function Name: BaseToDec
+ * Input: Stdin
+ * Output: Stdout
+ * Function Operation: Checks type of a given text from stdin.
+ *
+ */
+void BaseToDec () {}
+
+/**
+ * Function Name: BitCount
+ * Input: Stdin
+ * Output: Stdout
+ * Function Operation: Checks type of a given text from stdin.
+ *
+ */
+void BitCount () {
+}
+
+
+int main() {
 
     menu();
+
+    return 0;
 
 }
