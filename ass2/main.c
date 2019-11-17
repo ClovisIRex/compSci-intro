@@ -53,9 +53,7 @@ void drawSquare () {
     int number;
     printf("Enter Size:\n");
     scanf("%d", &number);
-    int square_size = 2 * number + 1;
-
-    void drawSquareFrame();
+    int square_size = 2* number +1;
 
     if (square_size == 1) {
         printf("X \n");
@@ -63,56 +61,36 @@ void drawSquare () {
     }
 
     for (int i = 0; i < square_size; i++) {
-        if ( i == 0) {
-            printf("+");
-
-            for (int j = 0; j < square_size; j++) {
-                printf("-");
-            }
-            printf("+\n");
-        }
-
         for (int j = 0; j < square_size; j++) {
-            if (square_size != NO_DIAGONAL_SIZE) {
-
-                if (i ==1) {
-                    if (j == square_size-i + 1) {
-                        printf("/");
-                    }
-                }
-
-                if (i ==square_size-2) {
-                    if (j == square_size-i +1) {
-                        printf("\\");
-                    }
-                }
-
-                if (j == square_size/2 + 1 && i == square_size/2) {
-                    printf("X");
-                } else if (j == i+1) {
-                    printf("\\");
-                } else if (j == square_size-i) {
-                    printf("/");
-                } else if (j == 0) {
-                    printf("|");
+            if (i==0 || i==square_size-1) {
+                if (j==0 || j==square_size-1) {
+                    printf("+");
                 } else {
+                    printf("-");
+                }
+            } else {
+
+                if (j == 0 || j==square_size-1) {
+                    printf("|");
+                } else if (j == (square_size-1)/2  && i == (square_size-1)/2) {
+                    printf("X");
+                } else if(square_size != NO_DIAGONAL_SIZE) {
+                    if (j==i) {
+                        printf("\\");
+                    } else if (j == square_size-i-1){
+                        printf("/");
+                    } else {
+                        printf(" ");
+                    }
+                }
+
+                else {
                     printf(" ");
                 }
+
+
             }
         }
-
-        printf(" |");
-
-
-        if (i == square_size-1) {
-            printf("\n+");
-
-            for (int j = 0; j < square_size; j++) {
-                printf("-");
-            }
-            printf("+\n");
-        }
-
         printf("\n");
     }
 
