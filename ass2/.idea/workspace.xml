@@ -68,7 +68,7 @@
       <updated>1573748029721</updated>
       <workItem from="1573748033397" duration="866000" />
       <workItem from="1573749594291" duration="13143000" />
-      <workItem from="1573977754543" duration="6366000" />
+      <workItem from="1573977754543" duration="13418000" />
     </task>
     <servers />
   </component>
@@ -89,10 +89,22 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>222</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="menu_option == EXIT_OPTION" language="ObjectiveC" />
-        <watch expression="EXIT_OPTION &amp;&amp; buffer != '\n'" language="ObjectiveC" />
+        <watch expression="buffer == '\n'" language="ObjectiveC" />
+        <watch expression="buffer &gt; tempBuffer" language="ObjectiveC" />
+        <watch expression="buffer &lt; tempBuffer" language="ObjectiveC" />
+        <watch expression="buffer == tempBuffer" language="ObjectiveC" />
+        <watch expression="(isConstantText &amp;&amp; isDecreasingText) || (isIncreasingText &amp;&amp; isDecreasingText) || (isConstantText &amp;&amp; isIncreasingText)" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
