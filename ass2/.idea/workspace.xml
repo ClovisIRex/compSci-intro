@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="929a09e7-9bb3-40d6-b40f-96d6b2783d6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ass2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ass2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
@@ -68,7 +67,7 @@
       <updated>1573748029721</updated>
       <workItem from="1573748033397" duration="866000" />
       <workItem from="1573749594291" duration="13143000" />
-      <workItem from="1573977754543" duration="13418000" />
+      <workItem from="1573977754543" duration="13738000" />
     </task>
     <servers />
   </component>
@@ -89,15 +88,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>222</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="buffer == '\n'" language="ObjectiveC" />

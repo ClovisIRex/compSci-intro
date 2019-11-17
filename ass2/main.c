@@ -187,12 +187,16 @@ void CheckTextType () {
 
     while (buffer != '\n' ) {
 
+        // If the text has anything other than lowercase Latin letters,it's invalid
         if (!(buffer >= 'a' && buffer <= 'z')) {
             isInvalidText = 1;
         }
         tempBuffer = buffer;
 
         scanf("%c",&buffer);
+
+        //As long as the text is not invalid and not ended with a backspace, check if the current char is bigger than,
+        // smaller than or equal to the previous, and therefore determine the text type
 
         if (!isInvalidText && buffer != '\n') {
 
