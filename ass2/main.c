@@ -78,7 +78,7 @@ void drawSquare () {
     int number;
 
     // get square size by 2 * input + 1
-    printf("Enter a number:\n");
+    printf("Enter a number: ");
     scanf("%d", &number);
     int square_size = 2* number +1;
 
@@ -145,7 +145,7 @@ void isEvenTextLength () {
 
     // get initial first char from user and store in a temp buffer
 
-    printf("Enter text:\n");
+    printf("Enter text: ");
     scanf(" %c",&buffer);
 
     /* keep reading chars from stdin until user pressed 'Enter'. Flag is XOR'd to keep track of even/uneven
@@ -186,7 +186,7 @@ void CheckTextType () {
 
     // get initial first char from user and store in a temp buffer
 
-    printf("Enter text:\n");
+    printf("Enter text: ");
     scanf(" %c",&buffer);
 
     // keep reading chars from stdin until user pressed 'Enter'.
@@ -270,7 +270,7 @@ void HexToDec () {
 
     // get initial first char from user and store in a temp buffer
 
-    printf("Enter a reversed number in base 16::\n");
+    printf("Enter a reversed number in base 16: ");
     scanf(" %c",&buffer);
 
     // keep reading chars from stdin until user pressed 'Enter'.
@@ -365,10 +365,35 @@ void BaseToDec () {
  * Function Name: BitCount
  * Input: Stdin
  * Output: Stdout
- * Function Operation: Checks type of a given text from stdin.
+ * Function Operation: Counts the number of bits of a signed int which are not 0 inputed by the user
  *
  */
 void BitCount () {
+
+    int num;
+    int bitNumberCount = 0;
+    int numBuffer;
+
+    printf("Enter a number: ");
+    scanf("%d",&numBuffer);
+    num = numBuffer;
+
+    for (int i = 0; i < 32; i++) {
+
+        if (numBuffer < 0) {
+            bitNumberCount++;
+        }
+
+        numBuffer <<= 1;
+    }
+
+//    while (numBuffer) {
+//        bitNumberCount += numBuffer & 1;
+//        numBuffer >>= 1;
+//    }
+
+    printf("The bit count of %d is %d\n",num,bitNumberCount);
+
 }
 
 
