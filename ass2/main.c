@@ -263,12 +263,14 @@ void HexToDec () {
 
     char buffer;
     int isInvalid = 0;
+    int base = 1;
+    int decimalValue = 0;
 
 
 
     // get initial first char from user and store in a temp buffer
 
-    printf("Enter number:\n");
+    printf("Enter a reversed number in base 16::\n");
     scanf(" %c",&buffer);
 
     // keep reading chars from stdin until user pressed 'Enter'.
@@ -278,23 +280,32 @@ void HexToDec () {
         if ( (buffer >='0' && buffer <= '9') || (buffer >= 'A' && buffer <= 'F') || (buffer >= 'a' && buffer <= 'f')) {
             if (!isInvalid) {
 
-                if (buffer >='0' && buffer <= '9') {
-                    printf("%d",(buffer - '0'));
-                }
-                if  (buffer >= 'A' && buffer <= 'F') {
-                    printf("%d",(buffer - 'A' + 10));
-                }
-                if  (buffer >= 'a' && buffer <= 'f') {
-                    printf("%d",(buffer - 'a' + 10));
+                // converting it to 10 - 15 by subtracting from ASCII value so we get 10 value
+
+                if (buffer>='0' && buffer<='9') {
+                    decimalValue += (buffer - 48)*base;
                 }
 
+                if ((buffer>='A' && buffer<='F') ) {
+                    decimalValue += (buffer - 55)*base;
+                }
+
+                if ((buffer >= 'a' && buffer <= 'f')) {
+                    decimalValue += (buffer - 87)*base;
+                }
+
+                base = base*16;
             }
         } else {
-            printf("Error! %c is not a valid digit in base 16\n",&buffer);
+            printf("Error! %c is not a valid digit in base 16\n",buffer);
             isInvalid = 1;
         }
 
         scanf("%c",&buffer);
+    }
+
+    if (!isInvalid) {
+        printf("%d",decimalValue);
     }
     printf("\n");
 
