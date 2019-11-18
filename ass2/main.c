@@ -315,10 +315,51 @@ void HexToDec () {
  * Function Name: BaseToDec
  * Input: Stdin
  * Output: Stdout
- * Function Operation: Checks type of a given text from stdin.
+ * Function Operation: Converts any base number from stdin to Decimal.
  *
  */
-void BaseToDec () {}
+void BaseToDec () {
+
+
+    char buffer;
+    int isInvalid = 0;
+    int base;
+    int power = 1;
+    int decimalValue = 0;
+
+
+
+    // get initial first char from user and store in a temp buffer
+
+    printf("Enter a base (2-10): ");
+    scanf("%2d",&base);
+    printf("Enter a reverse number in base %d: ",base);
+    scanf(" %c",&buffer);
+
+
+    // keep reading chars from stdin until user pressed 'Enter'.
+
+    while (buffer != '\n' ) {
+
+        int convertedBuffer = ((int)(buffer - 48));
+
+        if (convertedBuffer >= base) {
+            printf("Error! %c is not a valid digit in base %d\n",buffer,base);
+            isInvalid = 1;
+        } else {
+            decimalValue += (convertedBuffer * power);
+            power = power * base;
+        }
+
+        scanf("%c",&buffer);
+
+    }
+
+    if (!isInvalid) {
+        printf("%d\n",decimalValue);
+    }
+
+}
 
 /**
  * Function Name: BitCount

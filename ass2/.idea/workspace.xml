@@ -68,7 +68,7 @@
       <updated>1573748029721</updated>
       <workItem from="1573748033397" duration="866000" />
       <workItem from="1573749594291" duration="13143000" />
-      <workItem from="1573977754543" duration="20500000" />
+      <workItem from="1573977754543" duration="24679000" />
     </task>
     <servers />
   </component>
@@ -92,10 +92,7 @@
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="buffer == '\n'" language="ObjectiveC" />
-        <watch expression="buffer &gt; tempBuffer" language="ObjectiveC" />
-        <watch expression="buffer &lt; tempBuffer" language="ObjectiveC" />
-        <watch expression="buffer == tempBuffer" language="ObjectiveC" />
-        <watch expression="(isConstantText &amp;&amp; isDecreasingText) || (isIncreasingText &amp;&amp; isDecreasingText) || (isConstantText &amp;&amp; isIncreasingText)" language="ObjectiveC" />
+        <watch expression="buffer &gt;= base" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
