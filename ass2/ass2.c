@@ -305,9 +305,8 @@ void HexToDec () {
     }
 
     if (!isInvalid) {
-        printf("%d",decimalValue);
+        printf("%d\n",decimalValue);
     }
-    printf("\n");
 
 }
 
@@ -376,9 +375,14 @@ void BitCount () {
 
     printf("Enter a number: ");
     scanf("%d",&numBuffer);
+    // store a copy for later use, as we alter numBuffer next
     num = numBuffer;
 
-    // in a range of 32 bits, get the
+    // in a range of 32 iterations(max 32 bits), right shift every numBuffer by 1. every time we do this,
+    // we check if the numBuffer became a negative number. if it did, it means 1 bit has been taken, and we raise
+    // the bit counter(all bit which are not 0).
+    // Now we keep doing this for the negative bit range(with opposite condition, till we get a positive number)
+    // until we reach the maximum of 32 bits.
 
     for (int i = 0; i < 32; i++) {
 
