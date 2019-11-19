@@ -123,32 +123,32 @@ ass2/fast:
 	$(MAKE) -f CMakeFiles/ass2.dir/build.make CMakeFiles/ass2.dir/build
 .PHONY : ass2/fast
 
-main.o: main.c.o
+ass2.o: ass2.c.o
 
-.PHONY : main.o
+.PHONY : ass2.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/ass2.dir/build.make CMakeFiles/ass2.dir/main.c.o
-.PHONY : main.c.o
+ass2.c.o:
+	$(MAKE) -f CMakeFiles/ass2.dir/build.make CMakeFiles/ass2.dir/ass2.c.o
+.PHONY : ass2.c.o
 
-main.i: main.c.i
+ass2.i: ass2.c.i
 
-.PHONY : main.i
+.PHONY : ass2.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/ass2.dir/build.make CMakeFiles/ass2.dir/main.c.i
-.PHONY : main.c.i
+ass2.c.i:
+	$(MAKE) -f CMakeFiles/ass2.dir/build.make CMakeFiles/ass2.dir/ass2.c.i
+.PHONY : ass2.c.i
 
-main.s: main.c.s
+ass2.s: ass2.c.s
 
-.PHONY : main.s
+.PHONY : ass2.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/ass2.dir/build.make CMakeFiles/ass2.dir/main.c.s
-.PHONY : main.c.s
+ass2.c.s:
+	$(MAKE) -f CMakeFiles/ass2.dir/build.make CMakeFiles/ass2.dir/ass2.c.s
+.PHONY : ass2.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ass2"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... ass2.o"
+	@echo "... ass2.i"
+	@echo "... ass2.s"
 .PHONY : help
 
 

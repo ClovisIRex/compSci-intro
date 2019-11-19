@@ -234,16 +234,16 @@ void CheckTextType () {
     };
 
     if (isInvalidText) {
-        printf("Your text is invalid\n");
+        printf("your text is invalid\n");
     } else if (isMixedText) {
-        printf("Your text is mixed\n");
+        printf("your text is mixed\n");
     } else {
         if (isIncreasingText) {
-            printf("Your text is increasing\n");
+            printf("your text is increasing\n");
         } else if (isDecreasingText) {
-            printf("Your text is decreasing\n");
+            printf("your text is decreasing\n");
         } else if (isConstantText) {
-            printf("Your text is constant\n");
+            printf("your text is constant\n");
         }
     }
 
@@ -333,7 +333,7 @@ void BaseToDec () {
 
     printf("Enter a base (2-10): ");
     scanf("%2d",&base);
-    printf("Enter a reverse number in base %d: ",base);
+    printf("Enter a reversed number in base %d: ",base);
     scanf(" %c",&buffer);
 
 
@@ -378,6 +378,8 @@ void BitCount () {
     scanf("%d",&numBuffer);
     num = numBuffer;
 
+    // in a range of 32 bits, get the
+
     for (int i = 0; i < 32; i++) {
 
         if (numBuffer < 0) {
@@ -386,11 +388,6 @@ void BitCount () {
 
         numBuffer <<= 1;
     }
-
-//    while (numBuffer) {
-//        bitNumberCount += numBuffer & 1;
-//        numBuffer >>= 1;
-//    }
 
     printf("The bit count of %d is %d\n",num,bitNumberCount);
 

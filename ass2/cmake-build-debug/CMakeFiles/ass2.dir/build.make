@@ -57,27 +57,27 @@ include CMakeFiles/ass2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ass2.dir/flags.make
 
-CMakeFiles/ass2.dir/main.c.o: CMakeFiles/ass2.dir/flags.make
-CMakeFiles/ass2.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tal/University-code/compSci-intro/ass2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ass2.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass2.dir/main.c.o   -c /Users/tal/University-code/compSci-intro/ass2/main.c
+CMakeFiles/ass2.dir/ass2.c.o: CMakeFiles/ass2.dir/flags.make
+CMakeFiles/ass2.dir/ass2.c.o: ../ass2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tal/University-code/compSci-intro/ass2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ass2.dir/ass2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ass2.dir/ass2.c.o   -c /Users/tal/University-code/compSci-intro/ass2/ass2.c
 
-CMakeFiles/ass2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass2.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/tal/University-code/compSci-intro/ass2/main.c > CMakeFiles/ass2.dir/main.c.i
+CMakeFiles/ass2.dir/ass2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ass2.dir/ass2.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/tal/University-code/compSci-intro/ass2/ass2.c > CMakeFiles/ass2.dir/ass2.c.i
 
-CMakeFiles/ass2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass2.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/tal/University-code/compSci-intro/ass2/main.c -o CMakeFiles/ass2.dir/main.c.s
+CMakeFiles/ass2.dir/ass2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ass2.dir/ass2.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/tal/University-code/compSci-intro/ass2/ass2.c -o CMakeFiles/ass2.dir/ass2.c.s
 
 # Object files for target ass2
 ass2_OBJECTS = \
-"CMakeFiles/ass2.dir/main.c.o"
+"CMakeFiles/ass2.dir/ass2.c.o"
 
 # External object files for target ass2
 ass2_EXTERNAL_OBJECTS =
 
-ass2: CMakeFiles/ass2.dir/main.c.o
+ass2: CMakeFiles/ass2.dir/ass2.c.o
 ass2: CMakeFiles/ass2.dir/build.make
 ass2: CMakeFiles/ass2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/tal/University-code/compSci-intro/ass2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ass2"

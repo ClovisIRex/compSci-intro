@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ass2.dir/main.c.o"
+  "CMakeFiles/ass2.dir/ass2.c.o"
   "ass2"
   "ass2.pdb"
 )
