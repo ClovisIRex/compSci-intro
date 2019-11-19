@@ -68,9 +68,10 @@ void menu() {
 
 /**
  * Function Name: drawSquare
- * Input: Stdin
- * Output: Stdout
- * Function Operation: Draws a x*x square according to a number received by user Input. If the size is 3, the square has no diagonal lines.
+ * Input: None
+ * Output: None
+ * Function Operation: Draws a x*x square according to a number received by user Input.
+ * If the size is 3, the square has no diagonal lines.
  * If the square is size 1, the function draws only 'X'.
  */
 void drawSquare () {
@@ -80,7 +81,7 @@ void drawSquare () {
     // get square size by 2 * input + 1
     printf("Enter a number: ");
     scanf("%d", &number);
-    int square_size = 2* number +1;
+    int square_size = 2 * number +1;
 
     if (square_size == 1) {
         printf("X \n");
@@ -106,11 +107,13 @@ void drawSquare () {
                 if (j == 0 || j==square_size-1) {
                     printf("|");
 
-                    //Middle of square
+                    // Middle of square
+
                 } else if (j == (square_size-1)/2  && i == (square_size-1)/2) {
                     printf("X");
 
                     // Diagonal lines, none if square is 3*3
+
                 } else if(square_size != NO_DIAGONAL_SIZE) {
                     if (j==i) {
                         printf("\\");
@@ -133,8 +136,8 @@ void drawSquare () {
 
 /**
  * Function Name: isEven
- * Input: Stdin
- * Output: Stdout
+ * Input: None
+ * Output: None
  * Function Operation: Checks if a given text from stdin is of even or odd length.
  *
  */
@@ -167,8 +170,8 @@ void isEvenTextLength () {
 
 /**
  * Function Name: CheckTextType
- * Input: Stdin
- * Output: Stdout
+ * Input: None
+ * Output: None
  * Function Operation: Checks type of a given text from stdin.
  *
  */
@@ -181,9 +184,6 @@ void CheckTextType () {
     int isConstantText = 0;
     int isMixedText = 0;
 
-
-
-
     // get initial first char from user and store in a temp buffer
 
     printf("Enter text: ");
@@ -194,6 +194,7 @@ void CheckTextType () {
     while (buffer != '\n' ) {
 
         // If the text has anything other than lowercase Latin letters,it's invalid
+
         if (!(buffer >= 'a' && buffer <= 'z')) {
             isInvalidText = 1;
         }
@@ -229,8 +230,6 @@ void CheckTextType () {
             }
 
         }
-
-
     };
 
     if (isInvalidText) {
@@ -246,27 +245,21 @@ void CheckTextType () {
             printf("your text is constant\n");
         }
     }
-
-
-
 }
 
 /**
  * Function Name: HexToDec
- * Input: Stdin
- * Output: Stdout
+ * Input: None
+ * Output: None
  * Function Operation: Converts Hex number from stdin to Decimal.
  *
  */
 void HexToDec () {
 
-
     char buffer;
     int isInvalid = 0;
     int base = 1;
     int decimalValue = 0;
-
-
 
     // get initial first char from user and store in a temp buffer
 
@@ -307,18 +300,16 @@ void HexToDec () {
     if (!isInvalid) {
         printf("%d\n",decimalValue);
     }
-
 }
 
 /**
  * Function Name: BaseToDec
- * Input: Stdin
- * Output: Stdout
+ * Input: None
+ * Output: None
  * Function Operation: Converts any base number from stdin to Decimal.
  *
  */
 void BaseToDec () {
-
 
     char buffer;
     int isInvalid = 0;
@@ -326,15 +317,12 @@ void BaseToDec () {
     int power = 1;
     int decimalValue = 0;
 
-
-
     // get initial first char from user and store in a temp buffer
 
     printf("Enter a base (2-10): ");
     scanf("%2d",&base);
     printf("Enter a reversed number in base %d: ",base);
     scanf(" %c",&buffer);
-
 
     // keep reading chars from stdin until user pressed 'Enter'.
 
@@ -362,8 +350,8 @@ void BaseToDec () {
 
 /**
  * Function Name: BitCount
- * Input: Stdin
- * Output: Stdout
+ * Input: None
+ * Output: None
  * Function Operation: Counts the number of bits of a signed int which are not 0 inputed by the user
  *
  */
@@ -378,11 +366,13 @@ void BitCount () {
     // store a copy for later use, as we alter numBuffer next
     num = numBuffer;
 
-    // in a range of 32 iterations(max 32 bits), right shift every numBuffer by 1. every time we do this,
-    // we check if the numBuffer became a negative number. if it did, it means 1 bit has been taken, and we raise
-    // the bit counter(all bit which are not 0).
-    // Now we keep doing this for the negative bit range(with opposite condition, till we get a positive number)
-    // until we reach the maximum of 32 bits.
+    /*
+     * in a range of 32 iterations(max 32 bits), right shift every numBuffer by 1. every time we do this,
+     * we check if the numBuffer became a negative number. if it did, it means 1 bit has been taken, and we raise
+     * the bit counter(all bit which are not 0).
+     * Now we keep doing this for the negative bit range(with opposite condition, till we get a positive number)
+     * until we reach the maximum of 32 bits
+    */
 
     for (int i = 0; i < 32; i++) {
 
@@ -394,14 +384,10 @@ void BitCount () {
     }
 
     printf("The bit count of %d is %d\n",num,bitNumberCount);
-
 }
 
 
 int main() {
-
     menu();
-
     return 0;
-
 }
