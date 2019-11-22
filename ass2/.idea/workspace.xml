@@ -14,6 +14,8 @@
     <list default="true" id="929a09e7-9bb3-40d6-b40f-96d6b2783d6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ass2.c" beforeDir="false" afterPath="$PROJECT_DIR$/ass2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ass2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ass2" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +69,8 @@
       <updated>1573748029721</updated>
       <workItem from="1573748033397" duration="866000" />
       <workItem from="1573749594291" duration="13143000" />
-      <workItem from="1573977754543" duration="29950000" />
+      <workItem from="1573977754543" duration="30682000" />
+      <workItem from="1574352860637" duration="1677000" />
     </task>
     <servers />
   </component>

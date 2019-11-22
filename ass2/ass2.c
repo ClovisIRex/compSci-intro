@@ -273,18 +273,18 @@ void HexToDec () {
         if ( (buffer >='0' && buffer <= '9') || (buffer >= 'A' && buffer <= 'F') || (buffer >= 'a' && buffer <= 'f')) {
             if (!isInvalid) {
 
-                // converting it to 10 - 15 by subtracting from ASCII value so we get 10 value
+                // converting it to ints 10 - 15 by subtracting from ASCII value so we get 10 value
 
                 if (buffer>='0' && buffer<='9') {
-                    decimalValue += (buffer - 48)*base;
+                    decimalValue += (buffer - '0')*base;
                 }
 
                 if ((buffer>='A' && buffer<='F') ) {
-                    decimalValue += (buffer - 55)*base;
+                    decimalValue += (buffer - ('A'-10))*base;
                 }
 
                 if ((buffer >= 'a' && buffer <= 'f')) {
-                    decimalValue += (buffer - 87)*base;
+                    decimalValue += (buffer - ('a'-10))*base;
                 }
 
                 base = base*16;
