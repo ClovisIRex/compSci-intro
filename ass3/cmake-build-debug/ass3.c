@@ -14,8 +14,17 @@
 const int INFINITY_NUMBER = 1.0/0;
 int counter = 0;
 
+/**
+ * Function Name: isPowerInifinty
+ * Input: 2 numbers, one base(double) and one exponent(int) to power to
+ * Output: true(1) or false(0)
+ * Function Operation: Checks if the number to be powered on is 0 powered by a negative exponent
+ * @param base : double
+ * @param exponent : int
+ * @return number: int
+ */
 int isPowerInifinty(double base, int exponent) {
-    return base == 0 && exponent <0 ? 1 : 0;
+    return base == 0 && exponent < 0 ? 1 : 0;
 }
 
 
