@@ -35,15 +35,13 @@ double recEffiPow(double base, int exponent) {
         return INFINITY_NUMBER;
     }
 
-    double power;
 
     if (exponent != 0) {
         if (exponent % 2 ==0) {
-            power = recEffiPow(base,exponent/2);
-            return power * power;
+            return (base*recPow(base, exponent/2));
 
         } else {
-            return base * power * power;
+            return recPow(base,exponent);
         }
     } else {
         return 1;
