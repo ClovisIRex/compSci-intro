@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <math.h>
 
-const int INFINITY_NUMBER = 1.0/0;
+const double INFINITY_NUMBER = 1.0/0.0;
 int counter = 0;
 
 /**
@@ -221,6 +221,80 @@ int isPermutation(int arr1[], int size1, int arr2[], int size2) {
 
 }
 
+
+/**
+ *
+ * Function Name: getDigitCount
+ * Input: int(number)
+ * Output: int(number of digits)
+ * Function Operation: counts the number of digits of a given number
+ * @param number
+ * @return
+ */
+int getDigitCount(int number) {
+    int digitCount = 1;
+
+    if (number > 9) {
+        digitCount = (int) (log10(number) + 1);
+    }
+
+    return digitCount;
+}
+/**
+ * Function Name: getLargestNumberOfArray
+ * Input: int array, int size of array
+ * Output: int largest number of array
+ * Function Operation: finds the largest number of a given array
+ * @param arr
+ * @param size
+ * @return
+ */
+int getLargestNumberOfArray( int arr[], int size) {
+    int largestNumber = arr[0];
+
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] > largestNumber) {
+            largestNumber = arr[i];
+        }
+    }
+
+    return largestNumber;
+}
+
+/**
+ * Function Name: printArr2D
+ * Input: a 2 dimensional array of ints up to MAX, number of rows(int), number of columns(int)
+ * Output: void
+ * Function Operation: Prints a 2D array
+ * @param arr
+ * @param rows
+ * @param columns
+ */
 void printArr2D(int arr[][MAX], int rows, int columns) {
+    int largestNumber = arr[0][0];
+    int tempNumber;
+
+    for (int i = 0; i < rows; ++i) {
+        tempNumber = getLargestNumberOfArray(arr[i],columns);
+
+        if (tempNumber > largestNumber) {
+            largestNumber = tempNumber;
+        }
+
+
+        for (int j = 0; j < columns; ++j) {
+
+            if (arr[i][j] > largestNumber) {
+                largestNumber = arr[i][j];
+            }
+            int zeroPadAmount = getDigitCount(largestNumber);
+
+            printf("%0*d ",zeroPadAmount,arr[i][j]);
+
+            if (j == rows) {
+                printf("\n");
+            }
+        }
+    }
 }
 

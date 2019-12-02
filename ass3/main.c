@@ -53,10 +53,10 @@ void permManager() {
 }
 
 int main() {
-    powManager(1.5, 3);
-    powManager(0, 10);
-    powManager(2, 8);
-    powManager(0, -2);
+//    powManager(1.5, 3);
+//    powManager(0, 10);
+//    powManager(2, 8);
+//    powManager(0, -2);
     arrManager();
-    permManager();
+//    permManager();
 }
