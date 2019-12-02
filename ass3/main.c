@@ -30,11 +30,12 @@ void checkPerm(int arr1[], int size1, int arr2[], int size2) {
     } else {
         printf("No!\n");
     }
+    printf("%d\n", counter);
 }
 
 void permManager() {
-    int arr1[MAX] = {1,2,3,4,5};
-    int arr2[MAX] = {5,3,2,1,4};
+    int arr1[MAX] = {0,1,0};
+    int arr2[MAX] = {0,0};
     int size1 = sizeof(arr1) / sizeof(int);
     int size2 = sizeof(arr2) / sizeof(int);
     checkPerm(arr1, size1, arr2, size2);
