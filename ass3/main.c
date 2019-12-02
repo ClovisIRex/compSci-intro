@@ -8,15 +8,15 @@ void powManager(double base, int exp) {
     counter = 0;
     double iter = iterPow(base, exp);
     printf("iter: %g^%d = %g\n", base, exp, iter);
-    // printf("%d\n", counter);
+     printf("%d\n", counter);
     counter = 0;
     double rec  = recPow(base, exp);
     printf("rec : %g^%d = %g\n", base, exp, rec);
-    // printf("%d\n", counter);
+     printf("%d\n", counter);
     counter = 0;
     double effi  = recEffiPow(base, exp);
     printf("effi: %g^%d = %g\n", base, exp, effi);
-    // printf("%d\n", counter);
+     printf("%d\n", counter);
 }
 
 void arrManager() {

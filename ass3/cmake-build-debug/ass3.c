@@ -7,7 +7,6 @@
 *********************/
 
 #include "ass3.h"
-
 #include <stdio.h>
 #include <math.h>
 
@@ -15,7 +14,7 @@ const int INFINITY_NUMBER = 1.0/0;
 int counter = 0;
 
 /**
- * Function Name: isPowerInifinty
+ * Function Name: isBaseZeroAndNegativeExponent
  * Input: 2 numbers, one base(double) and one exponent(int) to power to
  * Output: true(1) or false(0)
  * Function Operation: Checks if the number to be powered on is 0 powered by a negative exponent
@@ -23,7 +22,7 @@ int counter = 0;
  * @param exponent : int
  * @return number: int
  */
-int isPowerInifinty(double base, int exponent) {
+int isBaseZeroAndNegativeExponent(double base, int exponent) {
     return base == 0 && exponent < 0 ? 1 : 0;
 }
 
@@ -31,21 +30,43 @@ int isPowerInifinty(double base, int exponent) {
 double recEffiPow(double base, int exponent) {
     counter++;
 
-    if (isPowerInifinty(base,exponent)) {
+    double result;
+    double pow;
+
+    // return "Infinity" if the base is 0 the negative exponent
+
+    if (isBaseZeroAndNegativeExponent(base, exponent)) {
         return INFINITY_NUMBER;
     }
 
+    if (exponent == 1) {
+        return base;
+    }
 
     if (exponent != 0) {
-        if (exponent % 2 ==0) {
-            return (base*recPow(base, exponent/2));
 
+        /* recursion stops when the exponent reaches 1 after dividing by 2 log2(n)
+           times(n is the inputted exponent value) , complexity is Olog2(n)
+        */
+
+        pow = recEffiPow(base, exponent / 2);
+
+        /* if the exponent is even we can apply the efficient algorithm normally
+           (multiply by the result instead of calling the function n times for efficiency)
+         */
+
+        if ( exponent % 2 == 0) {
+            result = pow * pow;
         } else {
-            return recPow(base,exponent);
+
+            // if the exponent is odd we need to multiply by the double base to get an accurate number(exponent is int)
+            result = base * pow * pow;
         }
-    } else {
-        return 1;
+
+        return result;
     }
+
+    return 1;
 
 
 }
@@ -62,11 +83,18 @@ double recEffiPow(double base, int exponent) {
 double recPow(double base, int exponent) {
     counter++;
 
-    if (isPowerInifinty(base,exponent)) {
+    // return "Infinity" if the base is 0 the negative exponent
+
+    if (isBaseZeroAndNegativeExponent(base, exponent)) {
         return INFINITY_NUMBER;
     }
 
     if (exponent != 0)
+
+        /* recursion stops when the exponent reaches 0 after subtracting 1 n
+           times(n is the inputted exponent value), complexity is O(n+1)
+        */
+
         return (base*recPow(base, exponent-1));
     else
         return 1;
@@ -84,9 +112,13 @@ double recPow(double base, int exponent) {
 double iterPow(double base, int exponent) {
     double power = 1;
 
-    if (isPowerInifinty(base,exponent)) {
+    if (isBaseZeroAndNegativeExponent(base, exponent)) {
         return INFINITY_NUMBER;
     }
+
+    /* loop stops when the i range reaches n after adding 1 n
+           times(n is the inputted exponent value), complexity is O(n)
+    */
 
     for (int i = 1; i <= exponent; i++) {
         counter++;
@@ -97,10 +129,8 @@ double iterPow(double base, int exponent) {
 }
 
 int isPermutation(int arr1[], int size1, int arr2[], int size2) {
-
 }
 
 void printArr2D(int arr[][MAX], int rows, int columns) {
-
 }
 

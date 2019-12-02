@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/tal/University-code/compSci-intro/ass3/cmake-build-debug/ass3.c
-ass3.h
 /Users/tal/University-code/compSci-intro/ass3/cmake-build-debug/ass3.h
+
+/Users/tal/University-code/compSci-intro/ass3/main.c
 stdio.h
 -
-math.h
+time.h
 -
-
+cmake-build-debug/ass3.h
 /Users/tal/University-code/compSci-intro/ass3/cmake-build-debug/ass3.h
 
